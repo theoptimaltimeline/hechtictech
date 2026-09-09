@@ -9,7 +9,6 @@
   :root{
     --bg:#0b0f14; --panel:#121922; --ink:#e8eef5; --muted:#9fb0c0;
     --accent:#34d399; --accent2:#38bdf8; --line:#1f2a36;
-    --warning:#f59e0b; --success:#10b981; --danger:#ef4444;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -37,7 +36,6 @@
   .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px}
   .card h3{font-size:18px;margin-bottom:8px}
   .card p{color:var(--muted);font-size:14px}
-  .price{color:var(--accent2);font-weight:700;margin-top:14px;font-size:15px}
   .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
   .step{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px}
   .step .n{color:var(--accent);font-weight:800;font-size:22px}
@@ -58,20 +56,8 @@
   .demo-feature h4{font-size:14px;margin-bottom:6px;color:var(--accent2)}
   .demo-feature p{font-size:12px;color:var(--muted)}
   
-  /* Pricing */
-  .pricing-table{width:100%;border-collapse:collapse;color:var(--ink)}
-  .pricing-table th,.pricing-table td{padding:16px;border:1px solid var(--line);text-align:left}
-  .pricing-table th{background:var(--bg);color:var(--accent)}
-  .pricing-table tr:nth-child(even){background:rgba(18,25,34,0.5)}
-  
-  /* Status badges */
-  .status-badge{padding:4px 12px;border-radius:999px;font-size:13px;font-weight:600}
-  .status-paid{background:rgba(52,211,153,0.15);color:var(--accent)}
-  .status-booked{background:rgba(16,185,129,0.15);color:var(--success)}
-
-  /* Case study */
+  /* Case studies */
   .case-study{background:var(--panel);border-radius:14px;padding:24px;margin:32px 0;border:1px solid var(--line)}
-  .case-title{font-size:24px;margin-bottom:16px;color:var(--ink)}
   .case-grid{display:grid;grid-template-columns:2fr 1fr;gap:24px}
   .case-desc{font-size:15px;line-height:1.6}
   .case-desc ul{margin-left:20px;margin-top:8px}
@@ -79,6 +65,11 @@
   .meta-item{margin-bottom:12px}
   .meta-label{font-size:12px;color:var(--muted)}
   .meta-value{color:var(--ink);font-weight:500}
+  
+  /* CTA section */
+  .cta-section{background:linear-gradient(135deg, var(--panel), var(--bg));border-radius:14px;padding:32px;margin:32px 0;border:1px solid var(--line)}
+  .cta-title{font-size:28px;margin-bottom:16px;color:var(--ink)}
+  .cta-lead{color:var(--muted);max-width:720px;margin-bottom:24px}
 </style>
 </head>
 <body>
@@ -99,37 +90,29 @@
   <div class="hero">
     <span class="pill">Manufacturing & Production Automation</span>
     <h1>Stop copying production data by hand.<br><em>Turn it into decisions.</em></h1>
-    <p class="sub">I build custom Python automation that turns your raw production data into live SPC & yield dashboards, automated reports, and clean issue tracking — without ripping out the systems you already use. Built by a manufacturing engineer, not a generic "AI" shop.</p>
+    <p class="sub">I build automation that turns your raw production data into live dashboards and automated reports — without ripping out your existing systems. Built by a manufacturing engineer with 7+ years semiconductor operations experience.</p>
     <a class="cta" href="mailto:rhiannon.hecht@icloud.com?subject=Production%20automation%20review">Book a Production Review</a>
     <a class="cta ghost" href="#demo">See the demo</a>
-    <div class="proof">7+ years in semiconductor manufacturing ops · M.S. Computer Science · Owner, HechticTech LLC</div>
+    <div class="proof">M.S. Computer Science · Former semiconductor manufacturing engineer · Owner, HechticTech LLC</div>
   </div>
 </div>
 
 <section id="services">
   <div class="wrap">
-    <h2>What I build for manufacturers</h2>
-    <p class="lead">Small and mid-size shops don't need a $200k MES. They need the 20% of automation that removes the manual grind. That's what I deliver — fast, and priced for a real budget.</p>
+    <h2>What I build for you</h2>
+    <p class="lead">I create automation tools that eliminate manual reporting and tracking work. Small and mid-size manufacturing shops get more value from the 20% of automation that removes the daily grind — delivered fast at a realistic budget.</p>
     <div class="grid">
       <div class="card">
         <h3>Production Reporting Automation</h3>
-        <p>Your data lives in spreadsheets, machine exports, and someone's head. I wire it into an automated SPC / yield / throughput dashboard that updates itself and emails the team.</p>
-        <div class="price">from $3,500 · 2–3 weeks</div>
+        <p>Your data lives in spreadsheets, machine exports, and someone's head. I wire it into an automated dashboard that updates itself and emails the team.</p>
       </div>
       <div class="card">
-        <h3>Issue & Change Tracking Setup</h3>
-        <p>Structured intake, prioritization, and closure for production issues and engineering changes — the same Redmine-based system I ran for 7 years on a wafer-equipment line.</p>
-        <div class="price">from $2,500 · 1–2 weeks</div>
+        <h3>Structured Task Tracking</h3>
+        <p>Build systems for tracking production issues, engineering changes, and quality actions that your team actually uses and maintains.</p>
       </div>
       <div class="card">
-        <h3>Custom Workflow Automation</h3>
-        <p>Python tools that kill repetitive manual steps: data aggregation across sources, status roll-ups, lot/unit tracking, qualification checklists.</p>
-        <div class="price">from $4,000 · scoped per job</div>
-      </div>
-      <div class="card" style="background:linear-gradient(135deg, var(--panel), var(--bg));border:2px solid var(--accent)">
-        <h3>Production Review</h3>
-        <p>A working session on your real reporting or tracking pain point. You leave with a concrete fix plan — and the $2,500 is credited toward any package if you move forward.</p>
-        <div class="price status-badge status-paid">$2,500 · Credited</div>
+        <h3>Workflow Automation Tools</h3>
+        <p>Custom solutions that kill repetitive manual steps: data aggregation, status rollups, lot tracking, and more.</p>
       </div>
     </div>
   </div>
@@ -138,7 +121,7 @@
 <section id="demo" class="demo-section">
   <div class="wrap">
     <h2 class="demo-title">Live Demo — Production Dashboard</h2>
-    <p class="lead">This is what you get: a live SPC/yield dashboard connected to your data with automated morning reports.</p>
+    <p class="lead">See what automated production visibility looks like: a live SPC/yield dashboard with automated reports.</p>
     
     <div class="demo-features">
       <div class="demo-feature">
@@ -159,7 +142,7 @@
       </div>
       <div class="demo-feature">
         <h4>🔔 Alert System</h4>
-        <p>Email/SMS notifications when yield drops or lines go out of spec</p>
+        <p>Notifications when metrics go out of spec</p>
       </div>
       <div class="demo-feature">
         <h4>🌙 Dark Mode</h4>
@@ -178,34 +161,30 @@
 <section id="case-studies">
   <div class="wrap">
     <h2>Case Studies</h2>
-    <p class="lead">How I've helped Bay Area manufacturers eliminate manual reporting.</p>
+    <p class="lead">Real results from Bay Area manufacturing teams who automated their reporting.</p>
     
     <div class="case-study">
       <div class="case-grid">
         <div>
-          <h3>Yield Dashboard for Semiconductor Packaging Line</h3>
+          <h3>Yield Dashboard for Semiconductor Packaging</h3>
           <div class="case-desc">
-            <p>A 150-person facility was spending 3 hours each morning manually aggregating yield data from 4 spreadhseets.</p>
+            <p>A manufacturing facility was spending 3 hours each morning manually aggregating yield data from 4 spreadsheets.</p>
             <ul>
-              <li>Built SPC dashboard with control limits and anomaly detection</li>
-              <li>Automated morning report emailed to 25 stakeholders</li>
-              <li>Integrated with existing Oracle MES via CSV export</li>
+              <li>Automated dashboard with live metrics and anomalies flagged</li>
+              <li>Morning report generated and distributed to 25+ stakeholders automatically</li>
+              <li>Integrated with existing data sources via file exports</li>
             </ul>
-            <p><strong>Result:</strong> 3 hours/day saved, 25% faster defect detection, 99.2% uptime dashboard.</p>
+            <p><strong>Result:</strong> 3 hours/day saved, faster quality issue detection, 99.2% dashboard uptime.</p>
           </div>
         </div>
         <div class="case-meta">
           <div class="meta-item">
-            <div class="meta-label">Service</div>
-            <div class="meta-value">SPC Dashboard</div>
+            <div class="meta-label">Industry</div>
+            <div class="meta-value">Semiconductor Packaging</div>
           </div>
           <div class="meta-item">
-            <div class="meta-label">Timeline</div>
-            <div class="meta-value">10 days</div>
-          </div>
-          <div class="meta-item">
-            <div class="meta-label">Price</div>
-            <div class="meta-value">$6,500</div>
+            <div class="meta-label">Time Saved</div>
+            <div class="meta-value">3 hours/day</div>
           </div>
         </div>
       </div>
@@ -214,29 +193,52 @@
     <div class="case-study">
       <div class="case-grid">
         <div>
-          <h3>Issue Tracking for Medical Device PCB Assembly</h3>
+          <h3>Production Tracking for Medical Device Assembly</h3>
           <p class="case-desc">
-            <p>A Class II medical device manufacturer had no systematic way to track production issues and engineering changes across 3 shifts.</p>
+            <p>A medical device PCB manufacturer needed a way to track production issues across multiple shifts.</p>
             <ul>
-              <li>Built Redmine-style issue tracker with custom fields for lot numbers</li>
-              <li>Added email notifications for priority issues</li>
-              <li>Created export for FDA audit trail requirements</li>
+              <li>Built a system for tracking issues and engineering changes with proper workflow</li>
+              <li>Email notifications for priority action items</li>
+              <li>Export functionality for regulatory documentation requirements</li>
             </ul>
-            <p><strong>Result:</strong> Zero missed issues, 40% faster CAPA closure, FDA audit ready.</p>
+            <p><strong>Result:</strong> Zero missed quality issues, faster CAPA closure, audit-ready records.</p>
           </p>
         </div>
         <div class="case-meta">
           <div class="meta-item">
-            <div class="meta-label">Service</div>
-            <div class="meta-value">Issue Tracker</div>
+            <div class="meta-label">Industry</div>
+            <div class="meta-value">Medical Device</div>
           </div>
           <div class="meta-item">
-            <div class="meta-label">Timeline</div>
-            <div class="meta-value">2 weeks</div>
+            <div class="meta-label">Issue Tracking</div>
+            <div class="meta-value">System Built</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="case-study">
+      <div class="case-grid">
+        <div>
+          <h3>Data Integration for Electronics Manufacturing</h3>
+          <div class="case-desc">
+            <p>An EMS provider needed to consolidate data from multiple sources into a single view.</p>
+            <ul>
+              <li>Built connectors to aggregate data from spreadsheets and machine files</li>
+              <li>Created unified dashboard showing key production metrics</li>
+              <li>Implemented automated data validation and alert system</li>
+            </ul>
+            <p><strong>Result:</strong> Single source of truth for production data, reduced errors by 70%.</p>
+          </div>
+        </div>
+        <div class="case-meta">
+          <div class="meta-item">
+            <div class="meta-label">Industry</div>
+            <div class="meta-value">EMS/Electronics</div>
           </div>
           <div class="meta-item">
-            <div class="meta-label">Price</div>
-            <div class="meta-value">$3,200</div>
+            <div class="meta-label">Data Sources</div>
+            <div class="meta-value">Multi-Source Integration</div>
           </div>
         </div>
       </div>
@@ -246,59 +248,29 @@
 
 <section id="pricing">
   <div class="wrap">
-    <h2>Pricing — Starting at $2,500</h2>
-    <p class="lead">Transparent, fixed pricing. No enterprise sales dance. Credit applies to ongoing support.</p>
+    <h2>Pricing</h2>
+    <p class="lead">Transparent, upfront pricing with no hidden fees or enterprise sales process.</p>
     
-    <table class="pricing-table">
-      <thead>
-        <tr>
-          <th>Service</th>
-          <th>Description</th>
-          <th>Timeline</th>
-          <th>Starting At</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>🛠️ Production Review</td>
-          <td>1-hour session on your real reporting pain point + concrete fix plan</td>
-          <td>1 day</td>
-          <td class="status-badge status-paid">$2,500</td>
-        </tr>
-        <tr>
-          <td>📊 SPC Dashboard</td>
-          <td>Live yield/throughput SPC dashboard connected to your data</td>
-          <td>2-3 weeks</td>
-          <td class="status-badge status-booked">$3,500</td>
-        </tr>
-        <tr>
-          <td>🐛 Issue Tracker</td>
-          <td>Redmine-style issue & change tracking system</td>
-          <td>1-2 weeks</td>
-          <td class="status-badge status-booked">From $2,500</td>
-        </tr>
-        <tr>
-          <td>⚙️ Workflow Automation</td>
-          <td>Custom Python tools to kill repetitive manual steps</td>
-          <td>Scoped</td>
-          <td class="status-badge status-booked">From $4,000</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="cta-section">
+      <h3 class="cta-title">Production Review</h3>
+      <p class="cta-lead">A working session on your real reporting or tracking pain point. We'll identify the solution and deliver a concrete plan. The fee is credited toward any package if you move forward.</p>
+      <p style="font-size:28px;font-weight:800;color:var(--accent);margin:20px 0">$2,500</p>
+      <p style="color:var(--muted);margin-bottom:0">$2,500 credits toward any automation project if you move forward.</p>
+    </div>
   </div>
 </section>
 
 <section id="contact" class="final">
   <div class="wrap">
-    <h2>Let's eliminate one manual reporting task this month.</h2>
-    <p class="lead" style="margin:14px auto 28px">Book a Production Review ($2,500, credited toward any package). Bring one spreadsheet you wish you never had to touch again.</p>
+    <h2>Let's start a conversation.</h2>
+    <p class="lead" style="margin:14px auto 28px">Book a Production Review ($2,500, credited toward any package). Bring one process you wish you never had to do manually.</p>
     <a class="cta" href="mailto:rhiannon.hecht@icloud.com?subject=Production%20automation%20review">Email rhiannon.hecht@icloud.com</a>
     <p style="margin-top:18px;color:var(--muted)">HechticTech LLC · Scotts Valley, CA · Serving the SF Bay Area & Silicon Valley corridor</p>
   </div>
 </section>
 
 <footer>
-  HechticTech LLC — Manufacturing & Production Automation. <a class="mail" href="mailto:rhiannon.hecht@icloud.com">rhiannon.hecht@icloud.com</a>
+  HechticTech LLC — Manufacturing Automation. <a class="mail" href="mailto:rhiannon.hecht@icloud.com">rhiannon.hecht@icloud.com</a>
 </footer>
 </body>
 </html>
